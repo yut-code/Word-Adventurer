@@ -8,6 +8,7 @@ Made by Teresa, Julia and Emily
 <li>Free-to-play web based Guess-The-Word game </li>
 <li>Built with HTML, CSS and JS</li>
 <li>Word Adventurer’s target users are first-gen immigrants looking to improve their English</li>
+<ul><li>We all have parents who struggled to learn English when coming to Canada(mine straight up read the dictionary which was not fun)</li></ul>
 <li>Fun brand and engaging environment</li>
 </ul>
 
