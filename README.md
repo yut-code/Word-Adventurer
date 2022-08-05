@@ -1,4 +1,4 @@
-<h1> 👹Word Adventurer🎈</h1>
+<h1> <a href="https://word-adventurer.emilykim10.repl.co/index.html">👹Word Adventurer🎈</a></h1>
 Google CSSI Final Project
 
 Made by Teresa, Julia and Emily
@@ -8,7 +8,7 @@ Made by Teresa, Julia and Emily
 <li>Free-to-play web based Guess-The-Word game </li>
 <li>Built with HTML, CSS and JS</li>
 <li>Word Adventurer’s target users are first-gen immigrants looking to improve their English</li>
-<ul><li>We all have parents who struggled to learn English when coming to Canada(mine straight up read the dictionary which was not fun)</li></ul>
+<ul><li>We all have parents who struggled to learn English when coming to Canada (mine straight up read the dictionary which was not fun)</li></ul>
 <li>Fun brand and engaging environment</li>
 </ul>
 
