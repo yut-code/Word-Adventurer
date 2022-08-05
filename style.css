@@ -11,6 +11,7 @@ body{
   line-height:1.6;
   width: 100%;
   height: 100%;
+  background-image: url('https://img.freepik.com/premium-photo/illustration-wallpaper-black-white-landscape-sun-sky-clouds-birds-tree-forest_245000-87.jpg?w=2000');
 }
 
 a img {
@@ -86,6 +87,7 @@ a img {
 	text-align: center;
   border: 2px solid #565656;
   border-radius: 4px;
+  cursor:pointer;
 }
 
 .guessed-correct {
@@ -153,4 +155,8 @@ nav button {
   margin-top: 20px;
   margin-left: 20px;
   margin-right: 20px;
+}
+
+html {
+  box-sizing: border-box;
 }

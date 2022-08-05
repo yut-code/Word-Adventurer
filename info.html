@@ -1,26 +1,114 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie-edge">
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <title>Word Adventurer - About Us</title>
-</head>
+    <title>Word Adventurer - Info</title>
+    <meta http-equiv="content-type" content="text/html; charset=iso-8859-1">
+    <meta name="description" content="Use this HTML basic website two percentage columns and one larger layout template where the extra stuff is large, and the navigation menu is narrow on the right side and the main content is wide on the left side.">
+    <meta name="generator" content="HAPedit 3.1">
+    <link rel="canonical" href="https://www.w3docs.com/snippets/html/layout_templates/30.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="HTML FlexBox Template -  Two percentage columns and one larger, left content" />
+    <meta property="og:description" content="Use this HTML basic website two percentage columns and one larger layout template where the extra stuff is large, and the navigation menu is narrow on the right side and the main content is wide on the left side." />
+    <meta property="og:image" content="https://www.w3docs.com/build/images/logo-amp.png" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="192" />
+    <meta property="og:image:height" content="192" />
+    <meta property="og:image:alt" content="W3dcos" />
+    <style type="text/css">
+        html, body {
+            margin:0;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size:17px;
+            line-height:1.6;
+            width: 100%;
+            height: 100%;
+        }
 
-<body>
-  <a href="index.html"><img alt="Go Home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width=50 height=50></a>
-  <div id="heading">
-    <h1>How to Play</h1><br>
-    <p>Welcome to Word Adventurer!</p><br>
-    <p>Press the letter keys on your keyboard to guess the hidden word. Be careful! Your friend Shawrvind--who is floating in the sky suspended by 10 balloons--is depending on you! For every incorrect letter guessed, you will pop one of Shawrvind's balloons. There is a scary beast waiting for Shawrvind to fall into his jaws if he looses all 10 balloons.The number of ballons left, and your highscore of how many balloons you were able to save by the end will show up on the top right corner. Be it a win or a defeat, you will be able to view the dictionary definition of the hiddden word by clicking the hyperlink which will appear on the screeen at the end of each game. If you are enjoying the game, click the next word button to keep going! </p><p> <br> 
+        body {
+            color: #292929;
+            font: 90% Roboto, Arial, sans-serif;
+          background-image: url('https://img.freepik.com/premium-photo/illustration-wallpaper-black-white-landscape-sun-sky-clouds-birds-tree-forest_245000-87.jpg?w=2000');
+        }
+
+        p {
+          padding: 0 10px;
+          font-size: 25px;
+        }
+
+        h3 {
+            padding: 5px 20px;
+            margin: 0;
+        }
+
+        div#header {
+            position: relative;
+        }
+
+        div#header h1 {
+            height: 80px;
+            line-height: 80px;
+            margin: 0;
+            padding-left: 10px;
+/*             background: #e0e0e0; */
+            color: #292929;
+        }
+
+        div#header a {
+            position: absolute;
+            right: 0;
+            top: 23px;
+            padding: 10px;
+            color: #006;
+        }
       
-    </p>Will you be able to save Shawrvind? Return to Home and click Play Now to get started!</p><br>
+        div#extra {
+          background: #db4437;
+          padding-bottom: 1.5%;
+          padding-top: 1.5%;
+        }
 
-    <h1>About Us</h1><br>
-    <p>Hi everyone, thank you for joining us to play Word Adventurer! This game was developed by Emily, Julia, and Teresa, three incoming university students in Waterloo, Canada. The purpose of this game is to create a fun and engaging environment for English learners, or anyone seeking to expand their vocbulary. We hope you enjoy!</p>
-  </div>
+        div#wrapper {
+            float: left;
+            width: 70%;
+        }
+
+        div#image {
+            float: right;
+            width: 29.9%;
+        }
+
+        div#extra {
+            clear: both;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+  <a href="index.html"><img alt="Go Home" src="https://cdn-icons-png.flaticon.com/512/25/25694.png" width=50 height=50
+      top=8></a>
+<div id="container">
+    <div id="header">
+        
+    </div>
+    <div id="wrapper">
+        <div id="content">
+            <p><strong>How to Play</strong></p>
+            <h3>Welcome to Word Adventurer!</h3>
+            <p>Press the letter keys on your keyboard or click the screen to guess the hidden word. Be careful! Your friend Sharvind ― who is floating in the sky suspended by 10 balloons ― is depending on you! For every incorrect letter guessed, 1 of Sharvind's balloons will pop. There is a scary beast waiting for Sharvind to fall into his jaws if he loses all 10 balloons.The number of ballons left, and your highscore of how many balloons you were able to save by the end will show up on the top right corner. Be it a win or a defeat, you will be able to view the dictionary definition of the hiddden word by clicking the hyperlink which will appear on the screeen at the end of each game. If you are enjoying the game, click the next word button to keep going!
+            </p>
+            
+        </div>
+    </div>
+    <div id="image">
+      <img class="Sharvind" src="/images/info1.png" alt="Guy holding balloons" width=75% >
+    </div>
+    <div id="extra">
+        <p><strong>About Us</strong></p>
+        <h3>A message from our team:</h3>
+        <p>
+          Hi everyone, thank you for joining us to play Word Adventurer! This game was developed by Emily, Julia, and Teresa, three incoming university students in Waterloo, Canada. The purpose of this game is to create a fun and engaging environment for English learners, or anyone seeking to expand their vocbulary. We hope you enjoy!
+        </p>
+</div>
+<script type="text/javascript">AddFillerLink("content", "image", "extra")</script>
 </body>
-
 </html>

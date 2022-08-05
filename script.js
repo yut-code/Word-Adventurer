@@ -1,4 +1,3 @@
-import "thesaurus-synonyms";
 const saved = document.querySelector('#topright')
 const best = document.querySelector('#topright2')
 const balloonguy = document.querySelector('.balloonguy');
@@ -11,7 +10,6 @@ let highscore = 0;
 const definitionDiv = document.querySelector('#definition')
 const button = document.querySelector('.button')
 const keyboard = document.querySelectorAll('.alpha-letter')
-var thesaurus = require('thesaurus-synonyms');
 const hintDiv = document.querySelector("#hint")
 
 // helper func - generate a random int 
@@ -34,8 +32,8 @@ async function getRandomWord() {
   const response = await fetch(`https://random-word-form.herokuapp.com/random/${randomQuery}`);
   const data = await response.json();
   definitionDiv.innerHTML = `Take a look at the definition: <a href=https://www.merriam-webster.com/dictionary/${data[0]} target="_blank">here</a>`
-  synonym = thesaurus.search(data[0])
-    .then(hintDiv.innerHTML = `Synonym: ${synonym}`);
+  const hintresponse = await fetch(`https://languagetools.p.rapidapi.com/synonyms/${data[0]}, options`)
+	const hintList = await hintresponse.json();
   
   for (let i = 0; i < data[0].length; i++) {
     if (!isalpha(data[0].charAt(i))) {
@@ -114,8 +112,6 @@ window.addEventListener("keypress", (e) => {
     })
   })
 
-
-
   function updateDisplay(value, currentGuess, correctLetter) {
     for (let i = 0; i < value.length; i++) {
       if (correctLetter === value.charAt(i)) { //try to ignore case when checking
@@ -131,6 +127,9 @@ window.addEventListener("keypress", (e) => {
     if (currentGuess.join('') === value) {
       console.log('e')
       definitionDiv.classList.remove('hidden');
+      setTimeout(() => alert("Good Job!")); 
+      balloonguy.src = `images/win${balloons}.png`
+      beast.src = `images/beast3.png`
     }
   }
 
