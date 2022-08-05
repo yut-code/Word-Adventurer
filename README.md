@@ -1,4 +1,4 @@
-<h1> <a href="https://word-adventurer.emilykim10.repl.co/index.html" target="_blank">👹Word Adventurer🎈</a></h1>
+<h1> <a href="https://word-adventurer.emilykim10.repl.co/index.html">👹Word Adventurer🎈</a></h1>
 Google CSSI Final Project
 
 Made by Teresa, Julia and Emily
