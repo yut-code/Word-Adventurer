@@ -61,6 +61,69 @@ async function getRandomWord() {
   return data[0];
 }
 
+// update display function with the generated word, currentGuess array and letter inputted that was correct
+function updateDisplay(value, currentGuess, correctLetter) {
+	// loop through the generated word 
+    for (let i = 0; i < value.length; i++) {
+	    // check the index(es) of the correct letter and change the corresponding index in the guessing array
+      if (correctLetter === value.charAt(i)) { 
+        currentGuess[i] = value.charAt(i);
+	    // could make a correctKeypress() function to make code more concise here; TODO
+        let alphaDiv = document.getElementById(correctLetter.toUpperCase());
+        alphaDiv.classList.add("guessed-correct", "pressed");
+      }
+    }
+    lettersDiv.innerHTML = currentGuess.join(' '); // display the current guess array as a string
+    saved.innerHTML = `Balloons saved: ${balloons}`; // update the navbar
+    console.log(value, currentGuess, correctLetter);
+    // show definition and change images if user wins the game
+    if (currentGuess.join('') === value) {
+      // console.log('e')
+      definitionDiv.classList.remove('hidden');
+      setTimeout(() => alert("Good Job!")); 
+      balloonguy.src = `images/win${balloons}.png`
+      beast.src = `images/beast3.png`
+    }
+  }
+
+// once game is over, the word generated will be revealed
+  function revealWord(value) {
+	// the value of the promise is a parameter to loop through the word and make the word an array that displays in the underscores div
+    let answerArr = [];
+    for (let i = 0; i < value.length; i++) {
+      answerArr[i] = value.charAt(i);
+    }
+    lettersDiv.innerHTML = answerArr.join(' ');
+	  // show the definition of the word
+    definitionDiv.classList.remove('hidden');
+    // console.log("saved element=" + saved);
+	  // update navbar
+    saved.innerHTML = `Balloons saved: ${balloons}`;
+  }
+
+// user replays the game? we must...
+  function refreshGame() {
+	  // empty our guessing array 
+    currentGuess = [];
+	  // get a new word
+    currentWord = getRandomWord();
+	  // remove classes to remove background color and that the letter have been guessed already
+    keyboard.forEach(key => key.classList.remove('guessed-wrong', 'guessed-correct', 'pressed'));
+	  // hide the definition again
+    definitionDiv.classList.add('hidden');
+	  // show correct images
+    balloonguy.src = `images/10.png`;
+    beast.src = `images/beast.png`;
+	  // update navbar
+    if (balloons > highscore) {
+      highscore = balloons;
+      best.innerHTML = `Best: ${highscore} balloons`;
+    }
+    balloons = maxBalloons;
+    incorrect = 0;
+  }
+
+
 // call on function to get the generated word (this will be a promise)
 let currentWord = getRandomWord();
 
@@ -140,68 +203,6 @@ window.addEventListener("keypress", (e) => {
       }
     })
   })
-
-// update display function with the generated word, currentGuess array and letter inputted that was correct
-function updateDisplay(value, currentGuess, correctLetter) {
-	// loop through the generated word 
-    for (let i = 0; i < value.length; i++) {
-	    // check the index(es) of the correct letter and change the corresponding index in the guessing array
-      if (correctLetter === value.charAt(i)) { 
-        currentGuess[i] = value.charAt(i);
-	    // could make a correctKeypress() function to make code more concise here; TODO
-        let alphaDiv = document.getElementById(correctLetter.toUpperCase());
-        alphaDiv.classList.add("guessed-correct", "pressed");
-      }
-    }
-    lettersDiv.innerHTML = currentGuess.join(' '); // display the current guess array as a string
-    saved.innerHTML = `Balloons saved: ${balloons}`; // update the navbar
-    console.log(value, currentGuess, correctLetter);
-    // show definition and change images if user wins the game
-    if (currentGuess.join('') === value) {
-      // console.log('e')
-      definitionDiv.classList.remove('hidden');
-      setTimeout(() => alert("Good Job!")); 
-      balloonguy.src = `images/win${balloons}.png`
-      beast.src = `images/beast3.png`
-    }
-  }
-
-// once game is over, the word generated will be revealed
-  function revealWord(value) {
-	// the value of the promise is a parameter to loop through the word and make the word an array that displays in the underscores div
-    let answerArr = [];
-    for (let i = 0; i < value.length; i++) {
-      answerArr[i] = value.charAt(i);
-    }
-    lettersDiv.innerHTML = answerArr.join(' ');
-	  // show the definition of the word
-    definitionDiv.classList.remove('hidden');
-    // console.log("saved element=" + saved);
-	  // update navbar
-    saved.innerHTML = `Balloons saved: ${balloons}`;
-  }
-
-// user replays the game? we must...
-  function refreshGame() {
-	  // empty our guessing array 
-    currentGuess = [];
-	  // get a new word
-    currentWord = getRandomWord();
-	  // remove classes to remove background color and that the letter have been guessed already
-    keyboard.forEach(key => key.classList.remove('guessed-wrong', 'guessed-correct', 'pressed'));
-	  // hide the definition again
-    definitionDiv.classList.add('hidden');
-	  // show correct images
-    balloonguy.src = `images/10.png`;
-    beast.src = `images/beast.png`;
-	  // update navbar
-    if (balloons > highscore) {
-      highscore = balloons;
-      best.innerHTML = `Best: ${highscore} balloons`;
-    }
-    balloons = maxBalloons;
-    incorrect = 0;
-  }
 
 // if the button is clicked, create a new game
   button.addEventListener("click", refreshGame);
